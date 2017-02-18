@@ -75,8 +75,3 @@ function fetchTweetsWithThe(user_name, responseObj, callback){
       callback();                     
   })    
 }
-
-
-
-
-
