@@ -1,0 +1,70 @@
+<html>
+    <head>
+    <style type="text/css">
+     body {
+        background: url(Twitter/twit.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.9;
+    }
+        #form{
+          padding          : 15px;
+          padding-left     : 22px;
+          padding-top      : 30px;
+          display          : table;
+          background-color : #4499e6;
+          borders           : 2px solid black;
+          margin-left      : 0%;
+          margin-right     : auto;
+          margin-top       : 1%;
+      }
+
+     .row1{
+          display: table-row;
+      }
+
+      .row1 input,select,submit{
+          padding:6px;
+      }
+      .row1 #submit{
+        background-color: orange;
+        color           : white;
+        margin-top      :8%;
+    }
+    #submit:hover
+    {
+      background-color: white;
+      color           : orange;
+  }
+
+    </style>
+            <title> Tweets Bot</title>
+
+
+            <script type="text/javascript">
+                function getTweets(){
+                        var n1 = document.getElementById("user_name").value;
+                        var n2 = document.getElementById("tweet_num").value;
+
+                        location.href = "http://localhost:1337" + "?user_name=" + n1 + "&tweet_num=" + n2;
+                }
+            </script>
+
+    </head>
+
+    <body>
+            <form id="form" name="theform"> 
+                <div class="row1">
+                <label for="Twitter Handle">Twitter Handle:</label><br>
+                <input type="text" id="user_name"></input><br><br>
+                </div>
+
+                <div class="row1">
+                <label for="Tweets">Tweets:</label><br>
+                <input type="number" id="tweet_num"></imput><br><br>
+                <input type="button" onClick="getTweets()" id="submit" value="submit"></input>
+                </div>
+            </form>
+    </body>
+
+<html>
