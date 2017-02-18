@@ -40,7 +40,6 @@ app.get('/', function (req, res) {
 })
 
 app.listen(1337,function(){
-
   console.log('Listening at port 1337');
 });
 
