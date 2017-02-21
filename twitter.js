@@ -58,7 +58,7 @@ function insertTweets(data, user_name, responseObj,callback){
   callback();
 }  
 
-//fetches tweet in tweet table 
+//fetches tweet in tweet table corresponding to username (tweethandle)
 function fetchTweetsWithThe(user_name, responseObj, callback){
   var tasks = [];
   var key   = user_name;
