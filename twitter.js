@@ -43,7 +43,7 @@ app.listen(1337,function(){
   console.log('Listening at port 1337');
 });
 
-
+//inserts tweet in tweet table 
 function insertTweets(data, user_name, responseObj,callback){
     for(var i=0;i<data.length;i++){
       var key     = {name:user_name, tweet_id:i, tweet: data[i].text};
@@ -58,7 +58,7 @@ function insertTweets(data, user_name, responseObj,callback){
   callback();
 }  
 
-
+//fetches tweet in tweet table 
 function fetchTweetsWithThe(user_name, responseObj, callback){
   var tasks = [];
   var key   = user_name;
