@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
     asyncTasks.push(insertTweets.bind(null, data, user_name, responseObj));
     asyncTasks.push(fetchTweetsWithThe.bind(null, user_name, responseObj));
 
-    async.series(asyncTasks, function (error,response){
+    async.series(asyncTasks, function (error){
       if(error){
         return err;
       }
