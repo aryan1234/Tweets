@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 
     async.series(asyncTasks, function (error){
       if(error){
-        return err;
+        return error;
       }
       res.send(responseObj.data);
     })
@@ -50,7 +50,7 @@ function insertTweets(data, user_name, responseObj,callback){
       var query = 'INSERT INTO `tweet` SET ?';
       con.query(query, [key], function(err,data,response){
       if(err){
-        return err;
+        callback(err);
       }
       console.log('Tweets inserted');
      }) 
@@ -65,7 +65,7 @@ function fetchTweetsWithThe(user_name, responseObj, callback){
   var query = "SELECT tweet FROM tweet WHERE name=?";
   con.query(query,[key], function(err,rows){
     if(err){
-      return err;
+      callback(err);
     }
     for(i=0; i<rows.length; i++){
         tasks.push("Tweet"+ i + ":"+ rows[i].tweet);
